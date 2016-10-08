@@ -13,6 +13,6 @@ public class CameraController : MonoBehaviour
 
     public void LateUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, camTarget.position, .05f);
+        transform.position = Vector3.Lerp(transform.position, camTarget.position, .1f);
     }
 }

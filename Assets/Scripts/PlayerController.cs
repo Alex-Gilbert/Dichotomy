@@ -42,10 +42,14 @@ public class PlayerController : MonoBehaviour
     public Transform TopCamTarget;
     public Transform LeftCamTarget;
     public Transform RightCamTarget;
+
+    public Transform[] Raycasters;
+    public LayerMask FloorLayerMask;
+
     // Use this for initialization
-    void Start ()
-	{
-	    animator = this.GetComponent<Animator>();
+    void Start()
+    {
+        animator = this.GetComponent<Animator>();
 
         WALKING_ID = Animator.StringToHash("Walking");
         UP_ID = Animator.StringToHash("Up");
@@ -63,19 +67,19 @@ public class PlayerController : MonoBehaviour
         IDLE_LEFT_ID = Animator.StringToHash("Idle-Left");
         IDLE_RIGHT_ID = Animator.StringToHash("Idle-Right");
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
 
-	    float input_x = Input.GetAxisRaw("Horizontal");
-	    float input_y = Input.GetAxisRaw("Vertical");
+        float input_x = Input.GetAxisRaw("Horizontal");
+        float input_y = Input.GetAxisRaw("Vertical");
 
-	    bool walking = input_x != 0 || input_y != 0;
+        bool walking = input_x != 0 || input_y != 0;
 
-	    if (walking)
-	    {
+        if (walking)
+        {
             animator.SetBool(WALKING_ID, true);
 
             animator.SetBool(UP_ID, input_y == 1);
@@ -86,40 +90,59 @@ public class PlayerController : MonoBehaviour
             Vector3 toMove = new Vector3(input_x, input_y);
             toMove.Normalize();
 
-            toMove *= Player_Speed*Time.deltaTime;
+            toMove *= Player_Speed * Time.deltaTime;
+
+            RaycastHit2D hit;
+            
+            foreach (var raycast in Raycasters)
+            {
+                hit = Physics2D.Raycast(raycast.position, toMove * 1.2f, toMove.magnitude * 1.2f, FloorLayerMask);
+
+                if (hit.collider != null)
+                {
+                    Debug.DrawLine(raycast.position, raycast.position + toMove * 1.2f, Color.red);
+                    toMove = Vector3.zero;
+                    break;
+                }
+                else
+                {
+                    Debug.DrawLine(raycast.position, raycast.position + toMove * 1.2f, Color.green);
+                    
+                }
+            }
 
             transform.Translate(toMove);
 
-	        if (stateInfo.shortNameHash == WALKING_DOWN_ID)
-	        {
-	            playerDir = PlayerDirection.Down;
-	            cam.camTarget = BottomCamTarget;
-	        }
-	        else if (stateInfo.shortNameHash == WALKING_UP_ID)
-	        {
-	            playerDir = PlayerDirection.Up;
-	            cam.camTarget = TopCamTarget;
-	        }
-	        else if (stateInfo.shortNameHash == WALKING_LEFT_ID)
-	        {
-	            playerDir = PlayerDirection.Left;
-	            cam.camTarget = LeftCamTarget;
-	        }
-	        else if (stateInfo.shortNameHash == WALKING_RIGHT_ID)
-	        {
-	            playerDir = PlayerDirection.Right;
-	            cam.camTarget = RightCamTarget;
-	        }
-	    }
-	    else
-	    {
+            if (stateInfo.shortNameHash == WALKING_DOWN_ID)
+            {
+                playerDir = PlayerDirection.Down;
+                cam.camTarget = BottomCamTarget;
+            }
+            else if (stateInfo.shortNameHash == WALKING_UP_ID)
+            {
+                playerDir = PlayerDirection.Up;
+                cam.camTarget = TopCamTarget;
+            }
+            else if (stateInfo.shortNameHash == WALKING_LEFT_ID)
+            {
+                playerDir = PlayerDirection.Left;
+                cam.camTarget = LeftCamTarget;
+            }
+            else if (stateInfo.shortNameHash == WALKING_RIGHT_ID)
+            {
+                playerDir = PlayerDirection.Right;
+                cam.camTarget = RightCamTarget;
+            }
+        }
+        else
+        {
             SetDirection(playerDir);
             animator.SetBool(WALKING_ID, false);
-	        cam.camTarget = CenterCamTarget;
-	    }
+            cam.camTarget = CenterCamTarget;
+        }
 
         animator.SetBool(WALKING_ID, input_x != 0 || input_y != 0);
-        
+
     }
 
     public void SetDirection(PlayerDirection dir)
@@ -127,7 +150,7 @@ public class PlayerController : MonoBehaviour
         switch (dir)
         {
             case PlayerDirection.Up:
-                animator.SetBool(UP_ID,true);
+                animator.SetBool(UP_ID, true);
                 animator.SetBool(DOWN_ID, false);
                 animator.SetBool(LEFT_ID, false);
                 animator.SetBool(RIGHT_ID, false);
@@ -150,6 +173,15 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool(LEFT_ID, false);
                 animator.SetBool(RIGHT_ID, true);
                 break;
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.tag.Equals("Room"))
+        {
+            
         }
     }
 }
