@@ -6,6 +6,12 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
+    public enum PlayerColor
+    {
+        Light,
+        Dark
+    }
+
     public enum PlayerDirection
     {
         Up,
@@ -33,6 +39,11 @@ public class PlayerController : MonoBehaviour
     private int IDLE_DOWN_ID;
     private int IDLE_LEFT_ID;
     private int IDLE_RIGHT_ID;
+
+    private int ATTACK_UP_ID;
+    private int ATTACK_DOWN_ID;
+    private int ATTACK_LEFT_ID;
+    private int ATTACK_RIGHT_ID;
 
     public float Player_Speed = 1;
     public CameraController cam;
@@ -66,6 +77,12 @@ public class PlayerController : MonoBehaviour
         IDLE_DOWN_ID = Animator.StringToHash("Idle-Down");
         IDLE_LEFT_ID = Animator.StringToHash("Idle-Left");
         IDLE_RIGHT_ID = Animator.StringToHash("Idle-Right");
+
+
+        ATTACK_UP_ID = Animator.StringToHash("Attack-Up");
+        ATTACK_DOWN_ID = Animator.StringToHash("Attack-Down");
+        ATTACK_LEFT_ID = Animator.StringToHash("Attack-Left");
+        ATTACK_RIGHT_ID = Animator.StringToHash("Attack-Right");
     }
 
     // Update is called once per frame
@@ -76,9 +93,12 @@ public class PlayerController : MonoBehaviour
         float input_x = Input.GetAxisRaw("Horizontal");
         float input_y = Input.GetAxisRaw("Vertical");
 
+        bool attacking = stateInfo.shortNameHash == ATTACK_UP_ID || stateInfo.shortNameHash == ATTACK_DOWN_ID ||
+                         stateInfo.shortNameHash == ATTACK_LEFT_ID || stateInfo.shortNameHash == ATTACK_RIGHT_ID;
         bool walking = input_x != 0 || input_y != 0;
+        
 
-        if (walking)
+        if (walking && !attacking)
         {
             animator.SetBool(WALKING_ID, true);
 
@@ -107,6 +127,9 @@ public class PlayerController : MonoBehaviour
                 Debug.DrawLine(raycast.position, raycast.position + toMove * 1.2f, Color.green);
             }
 
+            
+
+
             transform.Translate(toMove);
 
             if (stateInfo.shortNameHash == WALKING_DOWN_ID)
@@ -134,11 +157,15 @@ public class PlayerController : MonoBehaviour
         {
             SetDirection(playerDir);
             animator.SetBool(WALKING_ID, false);
-            cam.camTarget = CenterCamTarget;
+            if(!attacking) cam.camTarget = CenterCamTarget;
         }
 
-        animator.SetBool(WALKING_ID, input_x != 0 || input_y != 0);
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            animator.SetTrigger("Attack");
+        }
 
+        animator.SetBool(WALKING_ID, walking);
     }
 
     public void SetDirection(PlayerDirection dir)
