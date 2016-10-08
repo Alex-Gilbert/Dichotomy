@@ -14,8 +14,8 @@ TagManager:
   - UI
   - 
   - 
-  - room
-  - 
+  - wall
+  - floor
   - 
   - 
   - 
@@ -50,4 +50,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 160443063
+    locked: 0
+  - name: icon
+    uniqueID: 742038667
     locked: 0

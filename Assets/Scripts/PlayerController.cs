@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     public Transform RightCamTarget;
 
     public Transform[] Raycasters;
-    public LayerMask FloorLayerMask;
+    public LayerMask WallLayerMask;
 
     // Use this for initialization
     void Start()
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
             
             foreach (var raycast in Raycasters)
             {
-                hit = Physics2D.Raycast(raycast.position, toMove * 1.2f, toMove.magnitude * 1.2f, FloorLayerMask);
+                hit = Physics2D.Raycast(raycast.position, toMove * 1.2f, toMove.magnitude * 1.2f, WallLayerMask);
 
                 if (hit.collider != null)
                 {
@@ -104,11 +104,7 @@ public class PlayerController : MonoBehaviour
                     toMove = Vector3.zero;
                     break;
                 }
-                else
-                {
-                    Debug.DrawLine(raycast.position, raycast.position + toMove * 1.2f, Color.green);
-                    
-                }
+                Debug.DrawLine(raycast.position, raycast.position + toMove * 1.2f, Color.green);
             }
 
             transform.Translate(toMove);
@@ -178,7 +174,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-
+        print("hello");
         if (collision.gameObject.tag.Equals("Room"))
         {
             
