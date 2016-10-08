@@ -35,7 +35,13 @@ public class PlayerController : MonoBehaviour
     private int IDLE_RIGHT_ID;
 
     public float Player_Speed = 1;
+    public CameraController cam;
 
+    public Transform CenterCamTarget;
+    public Transform BottomCamTarget;
+    public Transform TopCamTarget;
+    public Transform LeftCamTarget;
+    public Transform RightCamTarget;
     // Use this for initialization
     void Start ()
 	{
@@ -78,25 +84,39 @@ public class PlayerController : MonoBehaviour
             animator.SetBool(RIGHT_ID, input_x == 1);
 
             Vector3 toMove = new Vector3(input_x, input_y);
-	        toMove *= Player_Speed*Time.deltaTime;
             toMove.Normalize();
+
+            toMove *= Player_Speed*Time.deltaTime;
 
             transform.Translate(toMove);
 
-	        if(stateInfo.shortNameHash == WALKING_DOWN_ID)
+	        if (stateInfo.shortNameHash == WALKING_DOWN_ID)
+	        {
 	            playerDir = PlayerDirection.Down;
+	            cam.camTarget = BottomCamTarget;
+	        }
 	        else if (stateInfo.shortNameHash == WALKING_UP_ID)
-                playerDir = PlayerDirection.Up;
-            else if (stateInfo.shortNameHash == WALKING_LEFT_ID)
-                playerDir = PlayerDirection.Left;
+	        {
+	            playerDir = PlayerDirection.Up;
+	            cam.camTarget = TopCamTarget;
+	        }
+	        else if (stateInfo.shortNameHash == WALKING_LEFT_ID)
+	        {
+	            playerDir = PlayerDirection.Left;
+	            cam.camTarget = LeftCamTarget;
+	        }
 	        else if (stateInfo.shortNameHash == WALKING_RIGHT_ID)
-                playerDir = PlayerDirection.Right;
+	        {
+	            playerDir = PlayerDirection.Right;
+	            cam.camTarget = RightCamTarget;
+	        }
 	    }
 	    else
 	    {
             SetDirection(playerDir);
             animator.SetBool(WALKING_ID, false);
-        }
+	        cam.camTarget = CenterCamTarget;
+	    }
 
         animator.SetBool(WALKING_ID, input_x != 0 || input_y != 0);
         
