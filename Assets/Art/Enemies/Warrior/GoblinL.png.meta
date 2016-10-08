@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 21137a8d04699504082a9fec7924acd1
-timeCreated: 1475902154
+timeCreated: 1475946748
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -16,6 +16,10 @@ TextureImporter:
     21300018: GoblinL_9
     21300020: GoblinL_10
     21300022: GoblinL_11
+    21300024: GoblinL_12
+    21300026: GoblinL_13
+    21300028: GoblinL_14
+    21300030: GoblinL_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -69,7 +73,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 5
-        y: 58
+        y: 76
         width: 12
         height: 15
       alignment: 0
@@ -82,7 +86,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 28
-        y: 58
+        y: 76
         width: 12
         height: 15
       alignment: 0
@@ -95,7 +99,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 51
-        y: 58
+        y: 76
         width: 12
         height: 15
       alignment: 0
@@ -108,7 +112,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 75
-        y: 58
+        y: 76
         width: 13
         height: 16
       alignment: 0
@@ -121,7 +125,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 5
-        y: 33
+        y: 51
         width: 12
         height: 15
       alignment: 0
@@ -134,7 +138,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 28
-        y: 32
+        y: 50
         width: 12
         height: 15
       alignment: 0
@@ -147,7 +151,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 52
-        y: 33
+        y: 51
         width: 12
         height: 15
       alignment: 0
@@ -160,7 +164,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 75
-        y: 32
+        y: 50
         width: 13
         height: 16
       alignment: 0
@@ -172,9 +176,9 @@ TextureImporter:
       name: GoblinL_8
       rect:
         serializedVersion: 2
-        x: 3
-        y: 7
-        width: 14
+        x: 4
+        y: 27
+        width: 13
         height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -186,8 +190,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 27
-        y: 6
-        width: 13
+        y: 26
+        width: 15
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -199,8 +203,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 52
-        y: 7
-        width: 14
+        y: 27
+        width: 13
         height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -211,8 +215,60 @@ TextureImporter:
       name: GoblinL_11
       rect:
         serializedVersion: 2
+        x: 75
+        y: 27
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GoblinL_12
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GoblinL_13
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 2
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GoblinL_14
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 3
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GoblinL_15
+      rect:
+        serializedVersion: 2
         x: 76
-        y: 6
+        y: 2
         width: 14
         height: 16
       alignment: 0
