@@ -22,7 +22,7 @@ GameObject:
   - 212: {fileID: 212000013115740886}
   - 95: {fileID: 95000010351540942}
   m_Layer: 0
-  m_Name: EX_Link_0
+  m_Name: Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
