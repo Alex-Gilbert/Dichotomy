@@ -475,9 +475,13 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: -140.95285, y: 41.06385}
+    - - {x: -140.75183, y: 18.871021}
+      - {x: -130.67578, y: 27.090061}
+      - {x: -130.82576, y: 42.076557}
+      - {x: -128.18008, y: 54.17283}
       - {x: -126.1055, y: 66.86851}
-      - {x: -97.55438, y: 82.352295}
+      - {x: -100.08616, y: 75.263336}
+      - {x: -69.606384, y: 73.5861}
       - {x: -57.05288, y: 77.69745}
       - {x: -24.21046, y: 94.875435}
       - {x: 25.031265, y: 95.51825}
@@ -1231,7 +1235,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1015374305}
   m_LocalRotation: {x: 0, y: 0, z: -0.91393554, w: 0.40585956}
-  m_LocalPosition: {x: -51.4, y: 7.1, z: 0}
+  m_LocalPosition: {x: -47.8, y: 6, z: 0}
   m_LocalScale: {x: 0.9999997, y: 0.9999997, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -132.11}
   m_Children: []
@@ -1250,7 +1254,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 22.26, y: 5.2}
+  m_Size: {x: 41.78, y: 5.2}
 --- !u!114 &1015374308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1796,11 +1800,12 @@ EdgeCollider2D:
   - {x: -72.58812, y: 77.09808}
   - {x: -77.49343, y: 73.67883}
   - {x: -90.52768, y: 76.50906}
-  - {x: -111.77589, y: 89.67151}
-  - {x: -130.56035, y: 99.33244}
-  - {x: -133.37622, y: 94.2542}
-  - {x: -134.01862, y: 80.48024}
-  - {x: -128.68216, y: 63.608643}
+  - {x: -90.00266, y: 74.98724}
+  - {x: -98.660034, y: 82.11641}
+  - {x: -110.59029, y: 95.77326}
+  - {x: -130.90494, y: 97.98468}
+  - {x: -133.51225, y: 87.5692}
+  - {x: -128.1758, y: 48.41802}
   - {x: -132.6951, y: 41.723927}
   - {x: -129.51122, y: 33.38242}
   - {x: -134.8487, y: 22.720905}
@@ -2673,7 +2678,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 623538233
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 21137a8d04699504082a9fec7924acd1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2799,7 +2804,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2011997664
 Transform:
   m_ObjectHideFlags: 0
