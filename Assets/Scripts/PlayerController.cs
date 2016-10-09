@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private PlayerDirection playerDir;
+    public PlayerColor playerColor;
 
     private Animator animator;
 
@@ -45,6 +46,9 @@ public class PlayerController : MonoBehaviour
     private int ATTACK_LEFT_ID;
     private int ATTACK_RIGHT_ID;
 
+    private int LIGHT_ID;
+    private int DARK_ID;
+
     public float Player_Speed = 1;
     public CameraController cam;
 
@@ -57,10 +61,18 @@ public class PlayerController : MonoBehaviour
     public Transform[] Raycasters;
     public LayerMask WallLayerMask;
 
+    public Animator LightHeroAnimator;
+    public Animator DarkHeroAnimator;
+
+    private SpriteRenderer renderer;
+    public Texture lightTexture;
+    public Texture darkTexture;
+
     // Use this for initialization
     void Start()
     {
-        animator = this.GetComponent<Animator>();
+        animator = this.GetComponentInChildren<Animator>();
+        renderer = this.GetComponentInChildren<SpriteRenderer>();
 
         WALKING_ID = Animator.StringToHash("Walking");
         UP_ID = Animator.StringToHash("Up");
@@ -83,12 +95,18 @@ public class PlayerController : MonoBehaviour
         ATTACK_DOWN_ID = Animator.StringToHash("Attack-Down");
         ATTACK_LEFT_ID = Animator.StringToHash("Attack-Left");
         ATTACK_RIGHT_ID = Animator.StringToHash("Attack-Right");
+
+        LIGHT_ID = Animator.StringToHash("Light");
+        DARK_ID = Animator.StringToHash("Dark");
     }
 
     // Update is called once per frame
     void Update()
     {
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        animator.SetLayerWeight(2, playerColor == PlayerColor.Light ? 1 : 0);
+        animator.SetLayerWeight(1, playerColor == PlayerColor.Dark ? 1 : 0);
 
         float input_x = Input.GetAxisRaw("Horizontal");
         float input_y = Input.GetAxisRaw("Vertical");
@@ -164,6 +182,10 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("Attack");
         }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            ChangeColor(playerColor == PlayerColor.Dark ? PlayerColor.Light : PlayerColor.Dark);
+        }
 
         animator.SetBool(WALKING_ID, walking);
     }
@@ -206,5 +228,11 @@ public class PlayerController : MonoBehaviour
         {
             
         }
+    }
+
+    public void ChangeColor(PlayerColor pColor)
+    {
+        playerColor = pColor;
+        
     }
 }

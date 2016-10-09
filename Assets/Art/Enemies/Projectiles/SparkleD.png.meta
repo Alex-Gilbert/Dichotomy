@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: e9efadd27a2f1d94c9c3904d412d5bfa
-timeCreated: 1475961756
+guid: ed00575002b3e93478791e9b8875f723
+timeCreated: 1475970338
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Left-1
-    21300002: Up-1
-    21300004: right-1
-    21300006: down-1
-    21300008: left-2
-    21300010: up-2
-    21300012: right-2
-    21300014: down-2
-    21300016: leftattack-1
-    21300018: upattack-1
-    21300020: rightattack-1
-    21300022: downattack-1
-    21300024: leftattack-2
-    21300026: upattack-2
-    21300028: rightattack-2
-    21300030: downattack-2
+    21300000: SparkleD_0
+    21300002: SparkleD_1
+    21300004: SparkleD_2
+    21300006: SparkleD_3
+    21300008: SparkleD_4
+    21300010: SparkleD_5
+    21300012: SparkleD_6
+    21300014: SparkleD_7
+    21300016: SparkleD_8
+    21300018: SparkleD_9
+    21300020: SparkleD_10
+    21300022: SparkleD_11
+    21300024: SparkleD_12
+    21300026: SparkleD_13
+    21300028: SparkleD_14
+    21300030: SparkleD_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -69,215 +69,215 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Left-1
+      name: SparkleD_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 111
-        width: 12
-        height: 19
+        x: 0
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Up-1
+      name: SparkleD_1
       rect:
         serializedVersion: 2
-        x: 49
-        y: 111
-        width: 18
-        height: 19
+        x: 32
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: right-1
+      name: SparkleD_2
       rect:
         serializedVersion: 2
-        x: 75
-        y: 111
-        width: 12
-        height: 19
+        x: 64
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: down-1
+      name: SparkleD_3
       rect:
         serializedVersion: 2
         x: 96
-        y: 111
-        width: 18
-        height: 20
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: left-2
+      name: SparkleD_4
       rect:
         serializedVersion: 2
-        x: 29
-        y: 86
-        width: 12
-        height: 19
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: up-2
+      name: SparkleD_5
       rect:
         serializedVersion: 2
-        x: 49
-        y: 85
-        width: 18
-        height: 19
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: right-2
+      name: SparkleD_6
       rect:
         serializedVersion: 2
-        x: 76
-        y: 86
-        width: 12
-        height: 19
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: down-2
+      name: SparkleD_7
       rect:
         serializedVersion: 2
-        x: 97
-        y: 85
-        width: 18
-        height: 20
+        x: 96
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: leftattack-1
+      name: SparkleD_8
       rect:
         serializedVersion: 2
-        x: 4
-        y: 51
-        width: 31
-        height: 30
-      alignment: 9
-      pivot: {x: 0.7560786, y: 0.31728986}
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: upattack-1
+      name: SparkleD_9
       rect:
         serializedVersion: 2
-        x: 44
-        y: 49
-        width: 36
-        height: 30
-      alignment: 9
-      pivot: {x: 0.24273597, y: 0.34249127}
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: rightattack-1
+      name: SparkleD_10
       rect:
         serializedVersion: 2
-        x: 83
-        y: 40
-        width: 31
-        height: 38
-      alignment: 9
-      pivot: {x: 0.25001872, y: 0.7437238}
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: downattack-1
+      name: SparkleD_11
       rect:
         serializedVersion: 2
-        x: 117
-        y: 43
-        width: 35
-        height: 36
-      alignment: 9
-      pivot: {x: 0.732213, y: 0.72051215}
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: leftattack-2
+      name: SparkleD_12
       rect:
         serializedVersion: 2
-        x: 3
-        y: 10
-        width: 33
-        height: 25
-      alignment: 9
-      pivot: {x: 0.76919657, y: 0.6209667}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: upattack-2
-      rect:
-        serializedVersion: 2
-        x: 46
-        y: 6
-        width: 22
-        height: 35
-      alignment: 9
-      pivot: {x: 0.40549505, y: 0.2947887}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: rightattack-2
-      rect:
-        serializedVersion: 2
-        x: 75
-        y: 9
-        width: 34
-        height: 25
-      alignment: 9
-      pivot: {x: 0.22204365, y: 0.59828544}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: downattack-2
-      rect:
-        serializedVersion: 2
-        x: 125
+        x: 0
         y: 0
-        width: 21
-        height: 40
-      alignment: 9
-      pivot: {x: 0.5720033, y: 0.7504387}
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SparkleD_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SparkleD_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SparkleD_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     outline: []
-  spritePackingTag:
-  userData:
-  assetBundleName:
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
   assetBundleVariant: 
